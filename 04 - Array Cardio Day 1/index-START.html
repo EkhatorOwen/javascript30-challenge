@@ -75,18 +75,30 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-        let result7 = people.sort((a,b)=>  { 
-          if(a > b){
-            return 1
-          } else{
-            return -1
-          }
-          } )
+        let [] = people.map(element=>{
+         return element.split(', ')
+        })
+   
+        let result7 = people.sort((a,b)=>  {     
+         const [aLast, aFirst] = a.split(', ')
+         const [bLast, bFirst] = b.split(', ')
+         return aLast > bLast ? 1 : -1
+
+        } )
           console.table(result7)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const tranportation = data.reduce((acc,curr)=>{
+          if(!acc[curr]){
+            acc[curr] =0;
+          }
+          acc[curr]++
+        return acc;
+    },{ })
+
+    console.log(tranportation)
 
 
   </script>
