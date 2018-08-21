@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('hello')
+
+    // Interpolated
+      console.log('i am a %s','+pop')
+    // Styled
+    console.log('%c I am some great text', 'font-size:10px; background:red');
+    
+
+    // warning!
+    console.warn('oh nooo')
+    // Error :|
+      console.error('BAD')
+    // Info
+        console.info('crocodiles are not nice');
+        
+    // Testing
+        console.assert(1===2, 'that is wrong')
+    // clearing
+        console.clear();
+    // Viewing DOM Elements
+      const p = document.querySelector('p')
+      console.dir(p)
+    // Grouping together
+      dogs.forEach(dog=>{
+        console.groupCollapsed(`${dog.name}`)
+        console.log(`this is ${dog.name}`)
+        console.log(`${dog.name} is ${dog.age} years old`)
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`)
+        console.groupEnd(`${dog.name}`)
+      })
+    // counting
+        console.count('Own')
+        console.count('Own')
+        console.count('Own')
+    // timing
+      console.time('fetching data')
+      fetch('http://api.github.com/users/wesbos')
+          .then(data=>data.json())
+          .then(data=>{
+            console.log(data)
+            console.timeEnd('fetching data')
+          })
+  </script>
+</body>
+</html>
