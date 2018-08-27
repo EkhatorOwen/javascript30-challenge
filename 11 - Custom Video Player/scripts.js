@@ -29,8 +29,8 @@ console.log(this.dataset.skip)
 video.currentTime += parseFloat(this.dataset.skip)
 }
 function handlechange() {
-  console.log(this.name);
- // video[this.name] = this.value;
+ // console.log(this.name);
+  video[this.name] = this.value;
   
 }
 
