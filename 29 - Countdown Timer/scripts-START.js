@@ -24,7 +24,7 @@ function timer(seconds){
       displayTimeLeft(secondsLeft)
    }, 1000);
 }
-
+//displays the time left
 function displayTimeLeft(seconds){
   const minutes = Math.floor(seconds/60)
   const remainderSeconds = seconds % 60;
@@ -32,7 +32,7 @@ function displayTimeLeft(seconds){
   document.title = display;
   timerDisplay.textContent = display;
 }
-
+//displays the end time
 function displayEndTime(timestamp){
   const end = new Date(timestamp);
   const hour = end.getHours();
@@ -42,7 +42,7 @@ function displayEndTime(timestamp){
 
 function startTimer(){
   const seconds = parseInt(this.dataset.time);
-  timer(seconds)
+  timer(seconds);
 }
 
 
