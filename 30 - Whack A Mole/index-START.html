@@ -76,16 +76,16 @@
     
   }
 
- moles.forEach(elem=>elem.addEventListener('click',(e)=>{
-   //scoreBoard
-   
-  if(!e.isTrusted) return; //cheater
+  function bonk(e) {
+    if(!e.isTrusted) return; //cheater
    score++
-   hole.classList.remove('up')
+   this.classList.remove('up')
   
    scoreBoard.textContent=score
   // scoreBoard.innerHTML(score)
- }))
+  }
+
+ moles.forEach(elem=>elem.addEventListener('click',bonk))
 
 </script>
 </body>
