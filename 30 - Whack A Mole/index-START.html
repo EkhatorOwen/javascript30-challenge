@@ -78,10 +78,10 @@
 
  moles.forEach(elem=>elem.addEventListener('click',(e)=>{
    //scoreBoard
-  
+   
   if(!e.isTrusted) return; //cheater
    score++
-   this.classList.remove('up')
+   hole.classList.remove('up')
   
    scoreBoard.textContent=score
   // scoreBoard.innerHTML(score)
